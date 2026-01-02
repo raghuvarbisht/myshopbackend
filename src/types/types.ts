@@ -10,17 +10,17 @@ export type ProductType = {
     name: string,
     price: number,
     description:string,
-    images: string,
-    category: string,
-    color:string,
-    size: string
+    images: string[],
+    category: string[],
+    color:string[],
+    size: string[]
 }
 
 
 export type OrderType = {
     user: mongoose.Types.ObjectId,
     products:{
-        product: string,
+        product: mongoose.Types.ObjectId,
         quantity: number
     }[],
     total_price: number,
@@ -32,7 +32,7 @@ export type OrderType = {
 export type CartType = {
     user: mongoose.Types.ObjectId,
     products:{
-        product: string,
+        product: mongoose.Types.ObjectId,
         quantity: number
     }[]
 }
@@ -40,7 +40,7 @@ export type CartType = {
 export type WishListType = {
     user: mongoose.Types.ObjectId,
     products:{
-        product: string
+        product: mongoose.Types.ObjectId
     }[]
 }
 
